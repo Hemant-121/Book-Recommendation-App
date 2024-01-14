@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Set Preferences</h2>
+    <form method="POST" action="{{ url_for('preferences') }}">
+        <label for="favorite_genre">Favorite Genre:</label>
+        <input type="text" name="favorite_genre" id="favorite_genre" required>
+
+        <button type="submit">Save Preferences</button>
+    </form>
+{% endblock %}
