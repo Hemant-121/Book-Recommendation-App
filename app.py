@@ -2,9 +2,13 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from openai import OpenAI
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'Your Secret Key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+app.config['SECRET_KEY'] = os.environ.get("SECRET-KEY")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("SQLALCHEMY_DATABASE_URI")
 db = SQLAlchemy(app)
 login_manager = LoginManager(app)
 
@@ -93,7 +97,7 @@ def recommendations():
             user_preferences = current_user.favorite_genre
 
             client = OpenAI(
-                api_key="Your OpenAI API key"
+                api_key=os.environ.get('OPENAI_API_KEY')
             )
 
             openai_prompt = f"Generate book recommendations based on the {user_preferences} genre. Provide a list of books and author names"

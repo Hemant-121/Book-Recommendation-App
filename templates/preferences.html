@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <div class="container">
     <h2>Set Preferences</h2>
     <form method="POST" action="{{ url_for('preferences') }}">
         <label for="favorite_genre">Favorite Genre:</label>
@@ -8,4 +9,5 @@
 
         <button type="submit">Save Preferences</button>
     </form>
+</div>
 {% endblock %}

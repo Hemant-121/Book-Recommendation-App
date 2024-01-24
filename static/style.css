@@ -58,6 +58,44 @@ nav {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.flashes {
+    list-style-type: none;
+    margin: 10px;
+    gap: 50px;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    width: fit-content;
+    z-index: 99;
+    position: fixed;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.flash-message{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.success {
+    color: #11df41;
+}
+
+.danger {
+    color: #ec1717;
+}
+
+.warning {
+    color: #d8b02c;
+}
+
+.default {
+    color: #1b0d0f;
+}
+
+
+
 form {
     margin-bottom: 20px;
 }
